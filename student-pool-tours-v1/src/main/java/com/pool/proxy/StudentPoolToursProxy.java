@@ -9,11 +9,11 @@ import com.pool.modal.PlanModel;
 
 //@FeignClient(name="student-pool-plan", url="localhost:8000")
 //@FeignClient(name="student-pool-plan")
-@FeignClient(name="netflix-zuul-api-gateway-server")
+@FeignClient(name="zuul-api-gateway-v1")
 @RibbonClient(name = "student-pool-plan")
 public interface StudentPoolToursProxy {
 	
-	@GetMapping("/student-pool-plan/student-pool-plan/getplandetails")
+	@GetMapping("/getplandetails")
 	public PlanModel getAllPlanDetails();
 
 }

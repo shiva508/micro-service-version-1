@@ -24,7 +24,7 @@ public class StudentTourController {
 	
 	private Logger logger=LoggerFactory.getLogger(StudentTourController.class);
 	
-	@GetMapping("/student-pool-tours/tours")
+	@GetMapping("/tours")
 	public ResponseEntity<?> calculateCurrencyConversion() {
 		
 		ResponseEntity<PlanModel> responseEntity = restTemplate.getForEntity("http://localhost:8000/student-pool-plan/getplandetails", PlanModel.class);
@@ -35,7 +35,7 @@ public class StudentTourController {
 		
 	}
 
-	@GetMapping("/student-pool-tours/tours-feign")
+	@GetMapping("/tours-feign")
 	public ResponseEntity<?> calculateCurrencyConversionFeign() {
 		PlanModel planModel = proxy.getAllPlanDetails();
 		logger.info("{}",planModel);
