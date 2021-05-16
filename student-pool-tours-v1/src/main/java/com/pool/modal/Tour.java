@@ -3,7 +3,7 @@ package com.pool.modal;
 public class Tour {
 	private Integer tourId;
 	private String location;
-	private PlanModel planModel;
+	private PlanDetails planDetails;
 
 	public Tour() {
 
@@ -27,12 +27,12 @@ public class Tour {
 		return this;
 	}
 
-	public PlanModel getPlanModel() {
-		return planModel;
+	public PlanDetails getPlanModel() {
+		return planDetails;
 	}
 
-	public Tour setPlanModel(PlanModel planModel) {
-		this.planModel = planModel;
+	public Tour setPlanModel(PlanDetails planDetails) {
+		this.planDetails = planDetails;
 		return this;
 	}
 
