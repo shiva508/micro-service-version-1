@@ -1,0 +1,2 @@
+SPRING_CLOUD_CONFIG_SERVER_URL:http://localhost:8888/student-pool/default
+SPRING_CLOUD_CONFIG_CONSUMER_SERVICE:http://localhost:8080/student-pool-global-config-service/config
