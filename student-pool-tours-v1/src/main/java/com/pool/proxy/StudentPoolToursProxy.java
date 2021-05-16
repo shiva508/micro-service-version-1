@@ -8,12 +8,13 @@ import com.pool.modal.PlanDetails;
 
 
 //@FeignClient(name="student-pool-plan", url="localhost:8000/student-pool-plan")//Hard-coding approach
-@FeignClient(name="student-pool-plan",path = "/student-pool-plan/")
-//@FeignClient(name="zuul-api-gateway-v1")
+//@FeignClient(name="student-pool-plan",path = "/student-pool-plan/")
+@FeignClient(name="zuul-api-gateway-v1",path = "/student-pool-plan/")
 @RibbonClient(name = "student-pool-plan")//FOR LOAD BALANACING
 public interface StudentPoolToursProxy {
 	
-	@GetMapping("/plandetails")
+	//@GetMapping("/plandetails")
+	@GetMapping("/student-pool-plan/plandetails")
 	public PlanDetails getAllPlanDetails();
 
 }
