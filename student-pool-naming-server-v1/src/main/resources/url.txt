@@ -3,7 +3,7 @@ SPRING_CLOUD_CONFIG_CONSUMER_SERVICE:http://localhost:8080/student-pool-global-c
 STUDENT_POOL_PLAN_API:http://localhost:8000/student-pool-plan/plandetails
 STUDENT_POOL_TOUR_API:http://localhost:8100/student-pool-tours/tours
 STUDENT_POOL_TOUR_API_FEIGN:http://localhost:8100/student-pool-tours/tours-feign
-
+http://localhost:8100/student-pool-tours/student-pool-tours/tours-feign
 
 KILL_PORT:sudo kill -9 `sudo lsof -t -i:9001`
 BANNER_URL:https://manytools.org/hacker-tools/ascii-banner/
