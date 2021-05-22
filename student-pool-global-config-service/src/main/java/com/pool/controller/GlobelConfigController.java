@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.pool.model.GlobelConfigModel;
 import com.pool.model.StudentPoolConfig;
 
@@ -16,9 +17,21 @@ public class GlobelConfigController {
 	private StudentPoolConfig studentPoolConfig;
 
 	@GetMapping("/config")
+	@HystrixCommand()
 	public ResponseEntity<?> getGlobalConfigController() {
 		return new ResponseEntity<>(new GlobelConfigModel().setStudentName(studentPoolConfig.getStudentName()).setStudentRollNumber(studentPoolConfig.getStudentRollNumber()),
 				HttpStatus.OK);
 	}
 
+	
+	@GetMapping("/tolarance")
+	@HystrixCommand(fallbackMethod = "defaultConfigData")
+	public ResponseEntity<?> tolarance() {
+		throw new RuntimeException("Something really");
+	}
+	
+	public ResponseEntity<?> defaultConfigData() {
+		return new ResponseEntity<>(new GlobelConfigModel().setStudentName("We").setStudentRollNumber("Miss"),
+				HttpStatus.OK);
+	}
 }
